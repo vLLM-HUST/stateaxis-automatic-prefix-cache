@@ -1,0 +1,14 @@
+{
+  "schema_version": "stateaxis-mod-provenance/v1",
+  "source_repository": "Qixin-Gaoke/stateaxis",
+  "source_commit": "7562b5fa6f42e2e045a877b53ac934739e2cf230",
+  "source_issues": [
+    55,
+    95
+  ],
+  "source_evidence": "docs/history/reports/ISSUE95_BOUNDED_APC_CLOSURE_20260815.md",
+  "copied_evidence": "evidence/ISSUE95_BOUNDED_APC_CLOSURE_20260815.md",
+  "copied_evidence_sha256": "8dad10cffd360a958c5800204088c9a99c5cb87a5b72592a36353df0bb629489",
+  "qualification_inherited": false,
+  "implementation_extracted": false
+}

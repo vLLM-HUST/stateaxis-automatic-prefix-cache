@@ -1,0 +1,44 @@
+{
+  "schema_version": "vllm-hust-mod-metadata-v1",
+  "mod_id": "org.vllm-hust.stateaxis-automatic-prefix-cache",
+  "repository": "stateaxis-automatic-prefix-cache",
+  "display_name": "stateaxis-automatic-prefix-cache",
+  "canonical_repository": "https://github.com/vLLM-HUST/stateaxis-automatic-prefix-cache",
+  "responsibility": {
+    "organization": "vLLM-HUST",
+    "maintainers": [
+      {
+        "name": "Shuhao Zhang (Tony)",
+        "github": "ShuhaoZhangTony"
+      }
+    ],
+    "advisor_status": "not_declared",
+    "advisors": []
+  },
+  "lifecycle": {
+    "status": "experimental",
+    "default_enabled": false,
+    "activation_contract": "Import-only research descriptor; activation is refused until the StateAxis host contract and independent implementation are reviewed.",
+    "rollback_contract": "Disable or forget the descriptor and run the unchanged StateAxis host without this MOD."
+  },
+  "scope": {
+    "mechanism": "lease_safe_content_addressed_prefix_cache",
+    "supported_workloads": [],
+    "out_of_scope": [
+      "general performance claims",
+      "automatic inheritance from StateAxis aggregate evidence"
+    ]
+  },
+  "evidence": {
+    "qualification": "qualified-in-tested-cell",
+    "latest_result": "evidence/ISSUE95_BOUNDED_APC_CLOSURE_20260815.md",
+    "index": "EVIDENCE.md",
+    "performance_claims": [
+      {
+        "label": "matched-real-online-tested-cell",
+        "scope": "frozen StateAxis source evidence only",
+        "result": "Repeated-prefix benefit is positive; the measured 3+3 default-path overhead was 0.0256%. Scope does not transfer beyond the frozen repeated-prefix cell."
+      }
+    ]
+  }
+}
