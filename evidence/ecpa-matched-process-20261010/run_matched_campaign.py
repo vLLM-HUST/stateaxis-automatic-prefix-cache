@@ -64,9 +64,7 @@ def sha256(path: Path) -> str:
 
 
 def git(repo: Path, *args: str) -> str:
-    return subprocess.check_output(
-        ["git", "-C", str(repo), *args], text=True
-    ).strip()
+    return subprocess.check_output(["git", "-C", str(repo), *args], text=True).strip()
 
 
 def request_json(url: str, payload: dict | None = None, timeout: int = 10) -> dict:
