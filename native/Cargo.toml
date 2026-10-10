@@ -1,0 +1,13 @@
+[package]
+name = "stateaxis-automatic-prefix-cache"
+version = "0.2.0"
+edition = "2021"
+description = "Lease-safe content-addressed prefix index for StateAxis"
+license = "Apache-2.0"
+
+[lib]
+name = "stateaxis_automatic_prefix_cache"
+path = "src/lib.rs"
+
+[dependencies]
+blake3 = "1"
