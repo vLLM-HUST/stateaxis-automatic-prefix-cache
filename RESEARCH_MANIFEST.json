@@ -1,0 +1,44 @@
+{
+  "schema_version": "stateaxis-research-mod/v1",
+  "mod_id": "org.vllm-hust.stateaxis-automatic-prefix-cache",
+  "version": "0.2.0",
+  "mechanism": {
+    "name": "lease-safe-content-addressed-prefix-cache",
+    "enabled": true,
+    "max_entries": 2,
+    "block_tokens": 128,
+    "lease_safe": true,
+    "verify_tokens_after_hash": true,
+    "fail_closed": true
+  },
+  "host_contract": {
+    "provider": "stateaxis",
+    "api_range": ">=1,<2",
+    "implementation": "statecentric_engine:parse_automatic_prefix_cache_additional_config",
+    "effect_counters": [
+      "automatic_prefix_cache_lookups",
+      "automatic_prefix_cache_hits",
+      "automatic_prefix_cache_reused_tokens",
+      "automatic_prefix_cache_inserts",
+      "automatic_prefix_cache_evictions",
+      "automatic_prefix_cache_lease_blocked_inserts",
+      "automatic_prefix_cache_hash_collisions",
+      "automatic_prefix_cache_stale_entries"
+    ]
+  },
+  "qualification": {
+    "performance_qualified": false,
+    "evidence_label": "historical-matched-real-online-no-harm-scoped",
+    "scope": "Qwen2.5-14B BF16, 2177-token prompt, 32 output tokens, 32 requests, concurrency four, APC capacity two",
+    "blockers": [
+      "the frozen closure measured a 0.0256% throughput overhead rather than a speedup",
+      "the accepted closure exercised bounded insertion and eviction but recorded zero APC hits",
+      "historical evidence predates the independent Manifest 0.3 implementation and cannot qualify it automatically"
+    ]
+  },
+  "source": {
+    "repository": "Qixin-Gaoke/stateaxis",
+    "commit": "7562b5fa6f42e2e045a877b53ac934739e2cf230",
+    "issues": [55, 95]
+  }
+}
