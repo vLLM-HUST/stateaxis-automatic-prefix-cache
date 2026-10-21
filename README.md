@@ -14,15 +14,14 @@ StateAxis repository.
 
 Status: **historical no-harm in one cell; independent implementation unqualified**.
 
-The frozen 3+3 closure was token-exact and lifecycle-clean with 0.0256%
-throughput overhead. Its candidate arms recorded eight insertions and six evictions
-but zero hits, so it establishes bounded ownership safety rather than a speedup.
-The independent implementation therefore remains performance-unqualified until a
-new matched repeated-prefix campaign exercises authoritative hits.
+Original measured figures, raw records, failed attempts and limitations are now
+maintained in [benchmark's frozen report](https://github.com/vLLM-HUST/vllm-hust-benchmark/blob/ddc4f6a3290e447260fc8f6c03ea36d3ca514e23/archive/mod-git-20261021/stateaxis-automatic-prefix-cache/snapshot/README.md) and
+[original evidence index](https://github.com/vLLM-HUST/vllm-hust-benchmark/blob/ddc4f6a3290e447260fc8f6c03ea36d3ca514e23/archive/mod-git-20261021/stateaxis-automatic-prefix-cache/snapshot/EVIDENCE.md). See [EVIDENCE.md](EVIDENCE.md)
+for immutable source links and verified external-cache retrieval.
 
-The copied evidence and its SHA-256 are recorded in `PROVENANCE.json`. Negative,
-failed, and inconclusive results are retained. Microbenchmarks and component results
-must not be restated as online end-to-end gains.
+The historical closure exercised no authoritative cache hits and does not
+establish an online speedup. The independent implementation remains unqualified.
+Negative, failed and inconclusive results remain unchanged in benchmark.
 
 ## Install and inspect
 

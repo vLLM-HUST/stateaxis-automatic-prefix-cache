@@ -1,19 +1,27 @@
-# Evidence index
+# Canonical evidence
 
-| Evidence | Label | Decision |
-| --- | --- | --- |
-| `evidence/ISSUE95_BOUNDED_APC_CLOSURE_20260815.md` | historical matched real-online no-harm, scoped | Retain bounded ownership design; no speedup claim because the accepted candidate recorded zero hits and 0.0256% throughput overhead. |
-| `evidence/on-off-preflight-20261010/` | import-only admission snapshot | Superseded by version 0.2.0 active Manifest 0.3 implementation; retained as historical negative admission evidence. |
-| `evidence/host-activation-20261010/` | host integration and ECPA activation, non-performance | StateAxis PR #484 merged; 397 host tests and Manager configure/enable/check/status/dry-run passed. The result deliberately makes no NPU or speedup claim. |
-| `evidence/ecpa-matched-process-20261010/` | matched 3+3 ECPA process gate, non-performance | All six fresh-process arms passed. OFF stayed at zero; each ON arm recorded 8 lookups, 7 exact hits, 28 reused tokens, one insertion, one bounded resident entry, exact outputs, and graceful lifecycle release. |
+Raw measured data lives in vllm-hust-benchmark, not this MOD's Git tree.
+This is a custody migration, not a new experiment or qualification.
 
-The independent native crate and Manifest 0.3 activation contract require a new
-matched ON/OFF campaign. Historical aggregate StateAxis results do not transfer
-qualification to this repository.
+- [Original report and limitations](https://github.com/vLLM-HUST/vllm-hust-benchmark/blob/ddc4f6a3290e447260fc8f6c03ea36d3ca514e23/archive/mod-git-20261021/stateaxis-automatic-prefix-cache/snapshot/README.md)
+- [Original detailed evidence index](https://github.com/vLLM-HUST/vllm-hust-benchmark/blob/ddc4f6a3290e447260fc8f6c03ea36d3ca514e23/archive/mod-git-20261021/stateaxis-automatic-prefix-cache/snapshot/EVIDENCE.md)
+- [Original machine-readable claims](https://github.com/vLLM-HUST/vllm-hust-benchmark/blob/ddc4f6a3290e447260fc8f6c03ea36d3ca514e23/archive/mod-git-20261021/stateaxis-automatic-prefix-cache/snapshot/MOD_METADATA.json)
+- [Complete frozen snapshot](https://github.com/vLLM-HUST/vllm-hust-benchmark/tree/ddc4f6a3290e447260fc8f6c03ea36d3ca514e23/archive/mod-git-20261021/stateaxis-automatic-prefix-cache/snapshot/)
+- [Byte inventory and source identity](https://github.com/vLLM-HUST/vllm-hust-benchmark/blob/ddc4f6a3290e447260fc8f6c03ea36d3ca514e23/archive/mod-git-20261021/stateaxis-automatic-prefix-cache/manifest.json)
 
-The next real-NPU gate must use a fresh server for each arm and a stable cache
-salt so candidate requests produce authoritative APC hits. The currently
-available container has the raw Qwen2.5 checkpoints but no longer has the
-custom Native Qwen2.5-14B weight packs or operator/full/decode oracles used by
-the historical campaign. Those inputs must be regenerated and frozen before a
-new device result can be admitted.
+EVIDENCE_SOURCES.json pins the benchmark commit and manifest SHA256. The helper
+checks every downloaded file against its original length and SHA256, including
+empty or failed records. It never executes downloaded evidence. Use a cache
+outside this repository:
+
+```bash
+python tools/benchmark_evidence.py --all --destination /tmp/stateaxis-automatic-prefix-cache-evidence
+```
+
+Do not commit cache contents or new experiment outputs here. Submit evidence to
+benchmark and update the pinned source index after integrity verification.
+
+The historical campaign Python source remains under evidence/ as code only.
+Use `python tools/run_matched_campaign.py --output /absolute/external/directory`
+to fetch its verified input configuration and direct new output outside Git.
+This migration does not run that campaign or alter its qualification boundary.
