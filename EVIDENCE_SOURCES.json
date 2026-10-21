@@ -1,0 +1,12 @@
+{
+  "repository": "vLLM-HUST/vllm-hust-benchmark",
+  "commit": "ddc4f6a3290e447260fc8f6c03ea36d3ca514e23",
+  "source_repository": "vLLM-HUST/stateaxis-automatic-prefix-cache",
+  "source_commit": "735c927713d8da727393a4fe9f89586fa77cf52f",
+  "manifest": {
+    "path": "archive/mod-git-20261021/stateaxis-automatic-prefix-cache/manifest.json",
+    "bytes": 7047,
+    "sha256": "0baa48462e9e16fae80bbcc60129577f7b414b80061ec9d2419063d5b3507238"
+  },
+  "snapshot": "archive/mod-git-20261021/stateaxis-automatic-prefix-cache/snapshot"
+}

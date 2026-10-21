@@ -7,7 +7,7 @@
     95
   ],
   "source_evidence": "docs/history/reports/ISSUE95_BOUNDED_APC_CLOSURE_20260815.md",
-  "copied_evidence": "evidence/ISSUE95_BOUNDED_APC_CLOSURE_20260815.md",
+  "copied_evidence": "https://github.com/vLLM-HUST/vllm-hust-benchmark/blob/ddc4f6a3290e447260fc8f6c03ea36d3ca514e23/archive/mod-git-20261021/stateaxis-automatic-prefix-cache/snapshot/evidence/ISSUE95_BOUNDED_APC_CLOSURE_20260815.md",
   "copied_evidence_sha256": "8dad10cffd360a958c5800204088c9a99c5cb87a5b72592a36353df0bb629489",
   "qualification_inherited": false,
   "implementation_extracted": true,
